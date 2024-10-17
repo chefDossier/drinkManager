@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%*2=voam6yl%4y9#o&^i^_z0-zhuc=!0^b!0$m%ozv0!3zxgzv'
+SECRET_KEY = 'django-insecure-jq3iganpizp46fwysqnn15qlm$2ncakkf8e!6yk_hvic4_9$^6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework'
+    'rest_framework_simplejwt'
+    'rest_framework_simplejwt.token_blacklist'
+    'corsheaders'
+    'authenticate'
 ]
 
 MIDDLEWARE = [
@@ -75,8 +81,12 @@ WSGI_APPLICATION = 'Authenticate.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'drinkManager_db',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',  # ou l'adresse IP de ton serveur MySQL
+        'PORT': '3306',  # port par défaut de MySQL
     }
 }
 

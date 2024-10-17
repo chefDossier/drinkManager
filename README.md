@@ -16,4 +16,5 @@
 ## packages added
 - django-cors-headers
 - djangorestframework
--
+- pip install mysqlclient
+- pip install djangorestframework-simplejwt
